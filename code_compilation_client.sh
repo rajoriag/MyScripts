@@ -32,7 +32,7 @@ do
     cd /mnt/nfs
     if [ $once -eq 0 ]
     then
-        yum -y install bison flex cmake gcc-c++ libacl-devel krb5-devel dbus-devel libnfsidmap-devel libwbclient-devel libcap-devel libblkid-devel rpm-build redhat-rpm-config glusterfs-api-devel
+        yum -y install bison flex cmake gcc-c++ libacl-devel krb5-devel dbus-devel libnfsidmap-devel libwbclient-devel libcap-devel libblkid-devel rpm-build redhat-rpm-config
         git clone https://review.gerrithub.io/ffilz/nfs-ganesha
     fi
     cd nfs-ganesha
