@@ -88,7 +88,7 @@ then
 		mkdir build
 		pushd build
 
-		cmake -DCMAKE_BUILD_TYPE=Maintainer -DUSE_FSAL_CEPH=OFF -DBUILD_CONFIG=everything ../src
+		cmake -DCMAKE_BUILD_TYPE=Maintainer -DUSE_FSAL_CEPH=OFF -DUSE_FSAL_CEPH_LL_LOOKUP_ROOT=OFF -DBUILD_CONFIG=everything ../src
 		make dist
 		rpmbuild -ta --define "_srcrpmdir $PWD" --define "_rpmdir $PWD" *.tar.gz
 		rpm_arch=$(rpm -E '%{_arch}')
