@@ -26,11 +26,11 @@ time touch file8.txt;
 time touch file9.txt;
 
 echo "only writes of bs=1G and count=3";
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file7.txt bs=1G count=3 conv=fdatasync;
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file8.txt bs=1G count=3 conv=fdatasync;
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file9.txt bs=1G count=3 conv=fdatasync;
 
 #echo "reads on files small data";
