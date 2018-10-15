@@ -39,13 +39,13 @@ time dd if=/dev/zero of=file9.txt bs=1G count=3 conv=fdatasync;
 #time dd if=file3.txt of=/dev/null bs=64 count=100;
 
 echo "reads on files large data"
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=file4.txt of=/dev/null bs=1M count=600;
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=file5.txt of=/dev/null bs=1M count=600;
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=file6.txt of=/dev/null bs=1M count=600;
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 
 echo "ls on dir with few files";
 time ls;
