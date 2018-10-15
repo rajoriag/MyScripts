@@ -13,11 +13,11 @@ time dd if=/dev/zero of=file2.txt bs=1M count=3000 conv=fdatasync;
 time dd if=/dev/zero of=file3.txt bs=1M count=3000 conv=fdatasync;
 
 echo "large writes of bs=1G and count=3";
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file4.txt bs=1G count=3 conv=fdatasync;
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file5.txt bs=1G count=3 conv=fdatasync;
-sync; echo 3 > /proc/sys/vm/drop_caches;
+sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file6.txt bs=1G count=3 conv=fdatasync;
 
 echo "creating a file";
