@@ -5,11 +5,11 @@ echo "ls on empty dir";
 time ls;
 
 echo "small writes of bs=1M and count=3000";
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file1.txt bs=1M count=3000 conv=fdatasync;
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file2.txt bs=1M count=3000 conv=fdatasync;
-#sync; echo 3 > /proc/sys/vm/drop_caches;
+#sync; echo 1 > /proc/sys/vm/drop_caches;
 time dd if=/dev/zero of=file3.txt bs=1M count=3000 conv=fdatasync;
 
 echo "large writes of bs=1G and count=3";
